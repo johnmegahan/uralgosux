@@ -33,6 +33,17 @@ Additional tasks can be included in the `gulpfile.js`. For further information
 about using Gulp, please refer to the [Gulp website](http://gulpjs.com/).
 
 
+## All generators and their output
+
+Available generators (to be run in the root directory of a project).
+
+* `flight <app-name>` (aka `flight:app`)
+* `flight:component <component-name>`
+* `flight:mixin <mixin-name>`
+* `flight:page <page-name>`
+* `flight:all`
+
+
 ## Unit tests
 
 A local installation of Karma is used to run the JavaScript unit tests.
