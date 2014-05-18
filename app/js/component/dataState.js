@@ -106,6 +106,10 @@ define(function (require) {
       storage.users = snapshot.val();
     };
 
+    this.saveRating = function (evt, msg) {
+      users.child(msg.user.id + '/vote').set(msg.vote);
+    };
+
     this.after('initialize', function () {
       this.sendGenreId();
 
@@ -130,6 +134,7 @@ define(function (require) {
       this.on('uiNeedsTrackList', this.sendTrackList);
       this.on('uiNeedsUserList',  this.sendUserList);
       this.on('uiNeedsUser',      this.sendUser);
+      this.on('uiRated',          this.saveRating);
     });
   }
 
