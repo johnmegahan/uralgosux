@@ -19,7 +19,7 @@ define(function (require) {
    */
 
   function dataState() {
-    var self = this;
+    var self;
     var storage = {};
     var fb;
     var room;
@@ -44,17 +44,55 @@ define(function (require) {
     this.sendTrackList = function () {
     };
 
+
+    // User Events
     this.userJoined = function (user) {
-      self.trigger('dataUserJoined', { user: user.val() });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserJoined', { user: data });
     };
 
     this.userLeft = function (user) {
-      self.trigger('dataUserLeft', { user: user.val() });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserLeft', { user: data });
     };    
 
     this.userChanged = function (user) {
-      self.trigger('dataUserChanged', { user: user.val() });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserChanged', { user: data });
     };
+
+
+    // DJ Events
+    this.djJoined = function (user) {
+      self.trigger('dataDJJoined', {
+        dj: {
+          id: user.name(),
+          rating: user.val()
+        }
+      });
+    };
+
+    this.djLeft = function (user) {
+      $(document).trigger('dataDJLeft', {
+        dj: {
+          id: user.name(),
+          rating: user.val()
+        }
+      });
+    };    
+
+    this.djChanged = function (user) {
+      $('body').trigger('dataDJChanged', {
+        dj: {
+          id: user.name(),
+          rating: user.val()
+        }
+      });
+    };
+
 
     this.sendUser = function (evt, msg) {
       users.child(msg.id).val()
@@ -68,8 +106,15 @@ define(function (require) {
       storage.users = snapshot.val();
     };
 
+    this.saveRating = function (evt, msg) {
+      users.child(msg.user.id + '/vote').set(msg.vote);
+    };
+
     this.after('initialize', function () {
       this.sendGenreId();
+
+      // This is hacky. Firebase docs are a lie.
+      self = this;
 
       // Create a firebase connection for this instance
       room = new Firebase(this.attr.fireBaseUrl + storage.genreId);
@@ -81,10 +126,15 @@ define(function (require) {
       users.on('child_removed', this.userLeft);
       users.on('child_changed', this.userChanged);
 
+      djs.on('child_added',   this.djJoined);
+      djs.on('child_removed', this.djLeft);
+      djs.on('child_changed', this.djChanged);
+
       this.on('uiNeedsGenreId',   this.sendGenreId);
       this.on('uiNeedsTrackList', this.sendTrackList);
       this.on('uiNeedsUserList',  this.sendUserList);
       this.on('uiNeedsUser',      this.sendUser);
+      this.on('uiRated',          this.saveRating);
     });
   }
 

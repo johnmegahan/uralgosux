@@ -1,16 +1,575 @@
-html {
-    color: #222222;
-}
-.beats_login {
-    text-align: center;
-}
-.logo {
-    width: 50px;
-    height: 50px;
+/* html { */
+/*     color: #222222; */
+/* } */
+/* .beats_login { */
+/*     text-align: center; */
+/* } */
+/* .logo { */
+/*     width: 50px; */
+/*     height: 50px; */
+/* } */
+
+/* .login_button { */
+/*     margin-top: 10px; */
+/*     color: black; */
+/*     background-color: #5c5c5c; */
+/* } */
+
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
 }
 
-.login_button {
-    margin-top: 10px;
-    color: black;
-    background-color: #5c5c5c;
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+body{
+	background: black;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+header{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	background: #2f2f2f;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+header h1{
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+article {
+	padding-right: 256px;
+}
+
+aside {
+	width: 256px;
+	background-color: #ccc;
+	position: fixed;
+	right: 0;
+	top:42px;
+	height: 100%;
+	border-right: 1px solid black;
+}
+aside ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+aside ul li{
+	padding: 6px 10px;
+	font-size: 12px;
+	line-height: 18px;
+	word-wrap: break-word;
+	border-bottom: 1px solid #e6e6e6;
+	position: relative;
+}
+aside ul li img{
+	width: 26px;
+	height: 26px;
+	border-radius: 4px;
+	border: 1px solid grey;
+	position: absolute;
+	left: 6px;
+	top: 10px;
+}
+aside ul li span{
+	margin-left: 30px;
+	display: block;
+}
+
+aside ul li:nth-child(odd)
+{
+background:#eee;
+}
+aside ul li:nth-child(even)
+{
+background:#fff;
+}
+
+section{
+	width: 100%;
+	padding-right:256px;
+	box-sizing: border-box;
+	position: fixed;
+	
+}
+
+.stage{
+	width: 50%;
+	margin: 0 auto;
+	padding-left: 40px;
+}
+.curtain{
+	position: fixed;
+	width: 1378px;
+	height: 395px;
+	background: url('../img/curtain.png') no-repeat center center;
+}
+.floor{
+	position: fixed;
+	top: 395px;
+	width: 1468px;
+	height: 460px;
+	background: url('../img/floor.jpg') no-repeat center center;
+}
+
+.table {
+	position: absolute;
+	top: 205px;
+	width: 518px;
+	height: 58px;
+	background: url('../img/dj-table.png') no-repeat center center;
+	z-index: 111;
+}
+
+.speakers{
+	width: 600px;
+	height: 142px;
+	position: absolute;
+	background: url('../img/speakers.png') no-repeat center center;	
+	top: 300px;
+	z-index: 111;
+	margin-left: -40px;
+}
+
+.board{
+	width: 507px;
+	height: 110px;
+	top:260px;
+	position: absolute;
+	background: url('../img/board.png') no-repeat center center;
+	background-size: cover;	
+	margin-left: 6px;
+	z-index: 110;
+}
+
+.light {
+	width: 110px;
+	height: 154px;
+	position: relative;
+	margin: 0 auto;
+	background: url('../img/dj-light.png') no-repeat center center;
+	transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+}
+
+.djs {
+	width: 486px;
+	position: absolute;
+	padding-left: 18px;
+	top:76px;
+	z-index: 1112;
+	text-align: center;
+}
+
+.dj {
+	width:25%;
+	height: 120px;
+	display: inline-block;
+}
+.dj img.laptop{
+	position: relative;
+	width: 70%;
+	top: -30px;
+	margin-left: 15%;
+}
+
+.dj img.person{
+	position: relative;
+	width: 84%;
+	margin-left: 8%;
+	
+}
+
+.chat{
+	position: absolute;
+	bottom:42px;
+	width: 100%;
+	height: 34px;
+	background-color: #ddd;
+	padding-top: 6px;
+	border-top: solid 1px #FFF;
+	-webkit-box-shadow: 0 -1px 0 0 #aaa;
+	-moz-box-shadow: 0 -1px 0 0 #aaa;
+	box-shadow: 0 -1px 0 0 #aaa;
+	border-bottom: solid 1px #999;
+	background-color: #e0e0e0;
+	background-image: -moz-linear-gradient(top,#eee,#ccc);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#eee),to(#ccc));
+	background-image: -webkit-linear-gradient(top,#eee,#ccc);
+	background-image: -o-linear-gradient(top,#eee,#ccc);
+	background-image: linear-gradient(to bottom,#eee,#ccc);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee',endColorstr='#ffcccccc',GradientType=0);
+}
+
+.chat img{
+	margin-left: 6px;
+	margin-right: 4px;
+	height: 26px;
+	width: 26px;
+	border-radius: 4px;
+	display: inline;
+	border: 1px solid gray;
+}
+.chat textarea{
+	width: 188px;
+	height: 18px;
+	display: inline;
+	border: 1px solid grey;
+	font: 12px Helvetica Neue,Helvetica,Arial,sans-serif;
+	padding: 5px 10px;
+	max-height: 72px;
+	line-height: 18px;
+	border: 0;
+	outline: 0;
+	resize: none;
+	background: #FFF;
+	border-radius: 14px;
+	-webkit-box-shadow: inset 0 0 0 1px #888,0 1px 0 0 #FFF;
+	-moz-box-shadow: inset 0 0 0 1px #888,0 1px 0 0 #FFF;
+	box-shadow: inset 0 0 0 1px #888,0 1px 0 0 #FFF;
+}
+
+
+.bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+	-webkit-animation-fill-mode:both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-fill-mode:both;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	-o-animation-duration:2s;
+	animation-duration:2s;
+}
+
+ 
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	
+	30% {-webkit-transform: translateY(-6px);}
+	90% {-webkit-transform: translateY(-4px);}
+}
+ 
+
+/* ==========================================================================
+   LED marquee
+   ========================================================================== */
+
+canvas {
+	box-shadow: 4px 5px 37px rgba(0, 0, 0, 0.80);
+	-moz-box-shadow: 4px 5px 37px rgba(0, 0, 0, 0.80);
+	-webkit-box-shadow: 4px 5px 37px rgba(0, 0, 0, 0.80);
+	position: relative;
+	z-index: 100;
+	background-color: black;
+}
+
+#led {
+	-ms-transform: scale(0.3); /* IE 9 */
+	-webkit-transform: scale(0.3); /* Chrome, Safari, Opera */
+	transform: scale(0.3);
+	top: 138px;
+	left: -340px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
