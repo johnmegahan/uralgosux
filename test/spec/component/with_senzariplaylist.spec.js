@@ -1,6 +1,6 @@
 'use strict';
 
-describeMixin('component/with_sensariplaylist', function () {
+describeMixin('component/with_Senzariplaylist', function () {
 
   // Initialize the component and attach it to the DOM
   beforeEach(function () {

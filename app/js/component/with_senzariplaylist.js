@@ -6,39 +6,39 @@ define(function (require) {
    * Module exports
    */
 
-  return withSensariplaylist;
+  return withSenzariplaylist;
 
   /**
    * Module function
    */
 
-  function withSensariplaylist() {
+  function withSenzariplaylist() {
     this.defaultAttrs({});
 
-    this.createSensariPlaylist = function(artist_name) {
+    this.createSenzariPlaylist = function(artist_name) {
       var api_key = "fccab87ea585c109b7f7ac3eb6f9351a";
 
       var self = this;
 
-      var createSensariArtistRadio = function(data, textStatus, jqXHR) {
+      var createSenzariArtistRadio = function(data, textStatus, jqXHR) {
         var artist_id = data.data[0].id;
 
         $.getJSON("http://api.musicgraph.com/api/v2/playlist", {
           api_key : api_key,
           artist_id : artist_id
         }, function(data, textStatus, jqXHR) {
-          self.resolveSensariTracks(data.data);
+          self.resolveSenzariTracks(data.data);
         });
       };
 
       $.getJSON("http://api.musicgraph.com/api/v2/artist/suggest", {
         api_key : api_key,
         prefix : artist_name
-      }, createSensariArtistRadio);
+      }, createSenzariArtistRadio);
 
     };
 
-    this.resolveSensariTracks = function(radio_data) {
+    this.resolveSenzariTracks = function(radio_data) {
 
       var track_ids = radio_data.map(function(track) {
         return 'tr' +  (track.track_ref_id || '') ;
@@ -48,15 +48,15 @@ define(function (require) {
         return track_id !== 'tr';
       });
 
-      this.trigger('dataSensariPlaylist', { tracks : track_ids} );
+      this.trigger('dataSenzariPlaylist', { tracks : track_ids} );
     };
 
-    this.getSensariPlaylist = function(event, msg) {
-      this.createSensariPlaylist(msg.artist_name);
+    this.getSenzariPlaylist = function(event, msg) {
+      this.createSenzariPlaylist(msg.artist_name);
     };
 
     this.after('initialize', function () {
-      this.on('uiNeedsSensariPlaylist', this.getSensariPlaylist);
+      this.on('uiNeedsSenzariPlaylist', this.getSenzariPlaylist);
     });
   }
 
