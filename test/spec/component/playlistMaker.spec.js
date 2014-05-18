@@ -1,6 +1,6 @@
 'use strict';
 
-describeComponent('component/playlistmaker', function () {
+describeComponent('component/playlistMaker', function () {
 
   // Initialize the component and attach it to the DOM
   beforeEach(function () {
