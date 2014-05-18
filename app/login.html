@@ -8,16 +8,21 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/bower_components/components-bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/components-bootstrap/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    <div class="beats_login">
-      <a><img class="logo" src="/img/beats-logo.png"></a>
+    <div class="login">
+      <div class="title">turnt.able</div>
       <form method="get" action="https://partner.api.beatsmusic.com/v1/oauth2/authorize">
         <input type="hidden" name="client_id" value="cwugqdk8f8em99j6yewzvq6m">
         <input type="hidden" name="response_type" value="token">
         <input type="hidden" name="redirect_uri" value="https://127.0.0.1:8080/cb">
-        <button type="submit" class="login_button">Log In</button>
+        <button type="submit" class="login_button">Log In
+          <div>
+            <img class="logo" src="/img/beats-logo.png">
+          </div>
+        </button>
       </form>
     </div>
     <!-- Google Analytics -->
