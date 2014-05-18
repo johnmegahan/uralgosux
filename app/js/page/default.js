@@ -7,6 +7,8 @@ define(function (require) {
    */
 
   var DataState = require('component/dataState');
+  var UIDj = require('component/uiDj');
+  var UIUser = require('component/uiUser');
 
   /**
    * Module exports
@@ -19,7 +21,11 @@ define(function (require) {
    */
 
   function initialize() {
-    DataState.attachTo(document);
+    UIDj.attachTo('#djs');
+    UIUser.attachTo('#users');
+    DataState.attachTo(document,  {
+      fireBaseUrl: 'https://uralgosux.firebaseio.com/'
+    });
   }
 
 });

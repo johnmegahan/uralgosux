@@ -1,1 +1,3 @@
-
+.dj, .user { display: block; width:200px; height:200px; margin:20px; }
+.dj { background-color: red; }
+.user { background-color: blue; }
