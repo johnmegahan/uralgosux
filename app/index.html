@@ -1,51 +1,84 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>uralgosux</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/bower_components/components-bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bower_components/components-bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-  </head>
-  <body>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    </head>
+    <body>
+          <header>
+<!--        <h1>#uralgosux</h1>  -->
+      <input id="text" type="text" value="music hack day is very fun" />
+      </header>
+      
+      <section>
+        <div class="curtain"></div>
+        <div class="stage">
+          <div id="djs" class="djs"></div>
+          <div class="board"></div>
+          <div class="table"></div>
+          <div class="speakers"></div>
+          <canvas id="led" width="1200" height="350"></canvas>
+        </div>
+        <div class="floor">
+          <ul id="users"></ul>
+        </div>
+      </section>
+      <aside>
+        <ul>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>         
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>
+          <li><img src=""/><span><b>name</b></span><span>test message</span></li>       
+        </ul>
+        <div class="chat">
+          <img src=""/>
+          <textarea placeholder="say something"></textarea>
+        </div>
+      </aside>       
 
-    <header id="rate-box">
-      <button id="thats-dope">+1</button>
-      <button id="basic-ish">-1</button>
-    </header>
+      <!--[if lt IE 9]>
+        <script src="/bower_components/es5-shim/es5-shim.js"></script>
+        <script src="/bower_components/es5-shim/es5-sham.js"></script>
+      <![endif]-->
 
-    <div id="dj-table">
-      <ul id="djs"></ul>
-    </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <div id="floor">
-      <ul id="users"></ul>
-    </div>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
-    <aside id="chat"></aside>
-    <aside id="history"></aside>
+      <script src="/bower_components/requirejs/require.js" data-main="js/main.js"></script>
 
-    <!--[if lt IE 9]>
-    <script src="/bower_components/es5-shim/es5-shim.js"></script>
-    <script src="/bower_components/es5-shim/es5-sham.js"></script>
-    <![endif]-->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/components-bootstrap/js/bootstrap.min.js"></script>
-    <script src="/bower_components/requirejs/require.js" data-main="js/main.js"></script>
-
-    <!-- Google Analytics -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-51104005-1');ga('send','pageview');
-    </script>
-
-  </body>
+      <!-- Google Analytics -->
+      <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-51104005-1');ga('send','pageview');
+      </script>
+    </body>
 </html>

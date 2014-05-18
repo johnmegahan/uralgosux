@@ -23,7 +23,7 @@ define(function (require) {
     var djs = {};
 
     this.defaultAttrs({
-      'template': '<li class="dj" id={{id}}>{{rating}}</li>'
+      'template': '<div class="dj" id={{id}}><img class="person" src="img/person_{{id}}.png"/><img class="laptop" src="img/laptop-mac.png"/></div>',
     });
 
     this.addDJ = function (evt, msg) {

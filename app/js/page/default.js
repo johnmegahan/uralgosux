@@ -10,6 +10,7 @@ define(function (require) {
   var UIDj = require('component/uiDj');
   var UIUser = require('component/uiUser');
   var UIRating = require('component/uiRating');
+  var UIMarquee = require('component/uiMarquee');
 
   /**
    * Module exports
@@ -25,6 +26,7 @@ define(function (require) {
     UIDj.attachTo('#djs');
     UIUser.attachTo('#users');
     UIRating.attachTo('#rate-box');
+    UIMarquee.attachTo(document);
     DataState.attachTo(document,  {
       fireBaseUrl: 'https://uralgosux.firebaseio.com/'
     });
