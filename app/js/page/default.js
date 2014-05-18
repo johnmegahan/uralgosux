@@ -6,7 +6,7 @@ define(function (require) {
    * Module dependencies
    */
 
-  // var MyComponent = require('component/my_component');
+  var DataState = require('component/dataState');
 
   /**
    * Module exports
@@ -19,7 +19,7 @@ define(function (require) {
    */
 
   function initialize() {
-    // MyComponent.attachTo(document);
+    DataState.attachTo(document);
   }
 
 });
