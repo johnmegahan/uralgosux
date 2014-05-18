@@ -5,7 +5,6 @@ define(function (require) {
   /**
    * Module dependencies
    */
-
   var DataState = require('component/dataState');
 
   /**
@@ -20,6 +19,10 @@ define(function (require) {
 
   function initialize() {
     DataState.attachTo(document);
+    if (!window.storage || !window.storage.user) {
+        var DataAuth = require('component/dataAuth');
+        DataAuth.attachTo(document);
+    }
   }
 
 });
