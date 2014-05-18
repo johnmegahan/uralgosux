@@ -47,30 +47,21 @@ define(function (require) {
 
     // User Events
     this.userJoined = function (user) {
-      self.trigger('dataUserJoined', {
-        user: {
-          id: user.name(),
-          rated: user.val()
-        }
-      });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserJoined', { user: data });
     };
 
     this.userLeft = function (user) {
-      $(document).trigger('dataUserLeft', {
-        user: {
-          id: user.name(),
-          rated: user.val()
-        }
-      });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserLeft', { user: data });
     };    
 
     this.userChanged = function (user) {
-      $('body').trigger('dataUserChanged', {
-        user: {
-          id: user.name(),
-          rated: user.val()
-        }
-      });
+      var data = user.val();
+      data.id = user.name();
+      self.trigger('dataUserChanged', { user: data });
     };
 
 
