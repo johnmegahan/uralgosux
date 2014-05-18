@@ -44,7 +44,7 @@ define(function (require) {
     this.resolveGracenoteTracks = function(radio_data) {
       var i = 0, l = radio_data.ALBUM.length;
       var track;
-      this.waiting = l;
+      this.gn_waiting = l;
       for (i,l; i < l; i++) {
         track = radio_data.ALBUM[i];
         this.trigger('uiNeedsTrackResolved', {
@@ -62,8 +62,8 @@ define(function (require) {
         ord : msg.ord,
         track : msg.id
       });
-      this.waiting--;
-      if (this.waiting == 0) {
+      this.gn_waiting--;
+      if (this.gn_waiting == 0) {
         this.gn_tracks.sort(function(a,b) {
           return a.ord - b.ord;
         });
